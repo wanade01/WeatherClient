@@ -1,14 +1,6 @@
-<h1 id="tableLabel">List of Countries</h1>
+<h1 id="tableLabel">Countries</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
-@if(!countries)
-{
-    <p><em>Loading...</em></p>
-}
-
-@else
-{
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Country ID</th>
@@ -18,14 +10,13 @@
             </tr>
         </thead>
         <tbody>
-            @for(countries of countries; track $index){
+            @for(country of countries; track $index){
             <tr>
-                <td>{{ countries.countryId }}</td>
-                <td>{{ countries.name}}</td>
-                <td>{{ countries.iso2 }}</td>
-                <td>{{ countries.iso3 }}</td>
+                <td><a [routerLink]="['/countryCities', country.countryId]">{{country.countryId}}</a></td>
+                <td>{{ country.name}}</td>
+                <td>{{ country.iso2 }}</td>
+                <td>{{ country.iso3 }}</td>
             </tr>
         }
         </tbody>
     </table>
-}
