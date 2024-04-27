@@ -10,7 +10,7 @@ import { NavBarComponent } from "./nav-bar/nav-bar.component";
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, HelloComponent, HttpClientModule, NavBarComponent]
+    imports: [RouterOutlet, HelloComponent, NavBarComponent]
 })
 
 export class AppComponent{
