@@ -23,12 +23,12 @@ export class LoginComponent implements OnInit{
 ngOnInit(): void {
   this.form = new FormGroup({
     userName : new FormControl("",Validators.required),
-    password : new FormControl("",Validators.required)
+    password : new FormControl("",Validators.required),
   });
 }
   form!: UntypedFormGroup;
-  onSubmit(){
-    let loginRequest: LoginRequest = <LoginRequest>{
+  onSubmit(): void{
+    let loginRequest: LoginRequest = <LoginRequest> {
       userName : this.form.controls["userName"].value,
       password : this.form.controls["password"].value
     };
@@ -36,7 +36,7 @@ ngOnInit(): void {
     {
       next: result => {
         console.log(result.message);
-        this.router.navigate(['/'])
+        this.router.navigate(['countries'])
       },
       error: error => console.error(error)
     }

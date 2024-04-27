@@ -19,12 +19,12 @@ export class AuthService {
     .pipe(tap(loginResult => {
       if (loginResult.success)
       {
-        localStorage.setItem(this.tokenKey, loginResult.token);
+        localStorage.setItem(this.tokenKey, loginResult.token)
       }
     }));
   }
 
-  getToken():string | null
+  getToken(): string | null
   {
     return localStorage.getItem(this.tokenKey);
   }
